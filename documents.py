@@ -24,10 +24,12 @@ def search_by_docnumber(doc_list):
 	for doc_element in doc_list:
 		if doc_element['number'] == doc_number :
 			print('  Имя человека с этим документом: ', doc_element['name'])
+			result = doc_element['name']
 			founded = True
 	if not founded :
 		print('  Документа с таким номером не существует')
 	print('----- Конец поиска -----')
+	return result
 
 def list_of_docs(doc_list):
 	print('----- Список документов: -----')
@@ -95,4 +97,6 @@ def main_repeater(doc_list,list_of_shelves):
 		else:
 			print('  Нет такой команды. Попробуйте еще.')
 
-main_repeater(documents, directories)
+
+if __name__ == '__main__':
+	main_repeater(documents, directories)
