@@ -33,9 +33,12 @@ def search_by_docnumber(doc_list):
 
 def list_of_docs(doc_list):
 	print('----- Список документов: -----')
+	result = []
 	for doc_element in doc_list:
 		print('  ', doc_element['type'], doc_element['number'], doc_element['name'])
+		result.append(doc_element['name'])
 	print('----- Конец списка -----')
+	return result
 
 def search_in_shelves(list_of_shelves):
 	print('----- Поиск полки по документу ---')
@@ -76,6 +79,7 @@ def add_document(doc_list, list_of_shelves):
 		# для дебага
 		#print('  На полке стало: ', list_of_shelves[shelf_number])
 	print('----- Конец добавления -----')
+	return doc_list
 
 def main_repeater(doc_list,list_of_shelves):
 	repeat = True
